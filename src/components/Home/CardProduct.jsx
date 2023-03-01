@@ -2,10 +2,14 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import config from '../../utils/getConfing'
+import { useDispatch } from 'react-redux'
+import { getCartThunk } from '../../store/slices/cart.slice'
+
 
 const CardProduct = ({ product }) => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleClick = () => {
         navigate(`/product/${product.id}`)
@@ -20,7 +24,10 @@ const CardProduct = ({ product }) => {
         }
 
         axios.post(url, data, config)
-            .then(res => console.log(res.data))
+            .then(res => {
+                console.log(res.data)
+                dispatch(getCartThunk())
+            })
             .catch(err => console.log(err.response))
         e.stopPropagation()
     }

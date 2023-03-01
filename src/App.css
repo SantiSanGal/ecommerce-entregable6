@@ -1,0 +1,7 @@
+.price::before{
+    content: '$';
+}
+
+.email::after{
+    content: '@gmail.com'
+}

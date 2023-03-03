@@ -12,6 +12,7 @@ import { getCartThunk } from './store/slices/cart.slice';
 import './App.css'
 import CartPage from './pages/CartPage';
 import ProtectedRoutes from './pages/ProtectedRoutes';
+import PurchasesPage from './pages/PurchasesPage';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         {/* Protected Routes  */}
         <Route element={<ProtectedRoutes/>}>
           <Route path='/cart' element={<CartPage />} />
+          <Route path='/purchases' element={<PurchasesPage />}></Route>
         </Route>
       </Routes>
     </div>

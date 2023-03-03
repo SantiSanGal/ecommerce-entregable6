@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProductInfo from '../components/ProductsPage/ProductInfo'
 import SimilarProducts from '../components/ProductsPage/SimilarProducts'
+import SliderImgs from '../components/ProductsPage/SliderImgs'
 
 const ProductPage = () => {
 
@@ -22,6 +23,9 @@ const ProductPage = () => {
 
   return (
     <div>
+      <SliderImgs 
+        product={product}
+      />
       {/* <h1>{id}</h1> */}
       <ProductInfo
         product={product}

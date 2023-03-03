@@ -28,7 +28,14 @@ const CardProduct = ({ product }) => {
                 console.log(res.data)
                 dispatch(getCartThunk())
             })
-            .catch(err => console.log(err.response))
+            .catch(err => {
+                console.log(err.response)
+
+                if (err.response.data.error == 'Product already added to cart') {
+
+                }
+                
+            })
         e.stopPropagation()
     }
 
